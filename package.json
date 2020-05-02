@@ -1,0 +1,16 @@
+{
+  "name": "image-gallery2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o css/ --recursive"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "^3.2.6",
+    "node-sass": "^4.14.0"
+  }
+}

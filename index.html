@@ -29,101 +29,101 @@
 			</div>
 		</header>
 
-		<div class="slide-images">
-			<svg
-				class="slider__mask"
-				xmlns="http://www.w3.org/2000/svg"
-				xmlns:xlink="http://www.w3.org/1999/xlink"
-				viewBox="0 0 1920 1080"
-				width="0"
-				height="0"
-			>
-				<defs>
-					<pattern
-						id="bg1"
-						patternUnits="userSpaceOnUse"
-						width="1920"
-						height="1080"
-						viewBox="0 0 1920 1080"
-					>
-						<image
-							xlink:href="./assets/macro-1.jpg"
+		<main>
+			<div class="slide-images">
+				<svg
+					class="slider__mask"
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					viewBox="0 0 1920 1080"
+					width="0"
+					height="0"
+				>
+					<defs>
+						<pattern
+							id="bg1"
+							patternUnits="userSpaceOnUse"
+							width="1920"
+							height="1080"
+							viewBox="0 0 1920 1080"
+						>
+							<image
+								xlink:href="./assets/macro-1.jpg"
+								width="100%"
+								height="100%"
+							/>
+						</pattern>
+						<pattern
+							id="pattern1l"
+							patternUnits="objectBoundingBox"
+							x="0px"
+							y="0px"
 							width="100%"
 							height="100%"
-						/>
-					</pattern>
-					<pattern
-						id="pattern1l"
-						patternUnits="objectBoundingBox"
-						x="0px"
-						y="0px"
-						width="100%"
-						height="100%"
-					>
-						<image
-							xlink:href="./assets/macro-2.jpg"
-							width="600px"
-							height="600px"
-						/>
-					</pattern>
-					<pattern
-						id="pattern1r"
-						patternUnits="objectBoundingBox"
-						x="365px"
-						width="100%"
-						height="100%"
-					>
-						<image
-							xlink:href="./assets/macro-3.jpg"
-							width="600px"
-							height="600px"
-						/>
-					</pattern>
-				</defs>
-			</svg>
-		</div>
-
-		<div class="slide__bg">
-			<svg
-				viewBox="0 0 1920 1080"
-				xmlns="http://www.w3.org/2000/svg"
-				xmlns:xlink="http://www.w3.org/1999/xlink"
-				x="0px"
-				y="0px"
-			>
-				<rect x="0" y="0" width="1920" height="1080" fill="url(#bg1)" />
-			</svg>
-		</div>
-
-		<div class="slide" id="slide">
-			<div class="slide__image">
-				<svg
-					viewBox="0 0 900 365"
-					xmlns="http://www.w3.org/2000/svg"
-					width="900"
-					height="365"
-				>
-					<path
-						class="slide__image-left"
-						d="M0 0v365h351.238L562 0H0z"
-						fill="url(#pattern1l)"
-						cursor="pointer"
-					/>
-					<path
-						class="slide__image-right"
-						d="M900 365V0H548.762L338 365h562z"
-						fill="url(#pattern1r)"
-						cursor="pointer"
-					/>
+						>
+							<image
+								xlink:href="./assets/macro-2.jpg"
+								width="600px"
+								height="600px"
+							/>
+						</pattern>
+						<pattern
+							id="pattern1r"
+							patternUnits="objectBoundingBox"
+							x="365px"
+							width="100%"
+							height="100%"
+						>
+							<image
+								xlink:href="./assets/macro-3.jpg"
+								width="600px"
+								height="600px"
+							/>
+						</pattern>
+					</defs>
 				</svg>
 			</div>
 
-			<div class="slider__pagination">
-				<a href="#slide-1" class="button">Slide 1</a>
-				<a href="#slide-2" class="button">Slide 2</a>
-			</div>
-		</div>
+			<div class="slide" id="slide">
+				<div class="slide__bg">
+					<svg
+						viewBox="0 0 1920 1080"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						x="0px"
+						y="0px"
+					>
+						<rect x="0" y="0" width="1920" height="1080" fill="url(#bg1)" />
+					</svg>
+				</div>
+				<div class="slide__image">
+					<svg
+						viewBox="0 0 900 365"
+						xmlns="http://www.w3.org/2000/svg"
+						width="900"
+						height="365"
+					>
+						<path
+							class="slide__image-left"
+							d="M0 0v365h351.238L562 0H0z"
+							fill="url(#pattern1l)"
+							cursor="pointer"
+						/>
+						<path
+							class="slide__image-right"
+							d="M900 365V0H548.762L338 365h562z"
+							fill="url(#pattern1r)"
+							cursor="pointer"
+						/>
+					</svg>
+				</div>
 
+				<div class="slider__pagination">
+					<a href="#slide-1" class="button" id="slide-1">Slide 1</a>
+					<a href="#slide-2" class="button" id="slide-2">Slide 2</a>
+				</div>
+			</div>
+		</main>
 		<!-- Modal -->
 		<div class="modal-container" id="modal">
 			<div class="modal">

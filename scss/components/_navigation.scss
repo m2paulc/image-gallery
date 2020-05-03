@@ -43,3 +43,26 @@ nav {
 		}
 	}
 }
+
+.menu-toggle {
+	background-image: url(../../assets/menu-sprite30.svg);
+	animation-duration: 300ms;
+	animation-timing-function: steps(9);
+	animation-fill-mode: forwards;
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+
+	&.play {
+		animation-name: open-play;
+	}
+}
+
+@keyframes open-play {
+	0% {
+		background-position: 0px 0px;
+	}
+	100% {
+		background-position: -216px 0px;
+	}
+}

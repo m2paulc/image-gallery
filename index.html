@@ -3,21 +3,21 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/main.css" />
 		<title>Image Gallery</title>
 	</head>
 	<body>
-		<aside>
-			<nav>
-				<div class="logo">
-					<img src="./assets/stork-user.png" alt="user" />
-				</div>
-				<ul>
-					<li><a href="#slide-1" class="menu">Home</a></li>
-					<li><a href="#slide-1" class="menu">About</a></li>
-					<li><a href="#slide-1" class="menu">Get in touch</a></li>
-				</ul>
-			</nav>
-		</aside>
+		<nav>
+			<div class="logo">
+				<img src="./assets/stork-user.png" alt="user" />
+			</div>
+			<ul>
+				<li><a href="#slide-1" class="menu">Home</a></li>
+				<li><a href="#slide-1" class="menu">About</a></li>
+				<li><a href="#slide-1" class="menu">Get in touch</a></li>
+			</ul>
+		</nav>
+
 		<header>
 			<div class="header-container">
 				<button id="menu-toggle" class="menu-toggle"></button>
@@ -54,26 +54,24 @@
 					</pattern>
 					<pattern
 						id="pattern1l"
-						patternUnits="userSpaceOnUse"
+						patternUnits="objectBoundingBox"
 						x="0px"
-						width="562"
-						height="424"
-						viewBox="0 0 680 512"
+						y="0px"
+						width="100%"
+						height="100%"
 					>
 						<image
 							xlink:href="./assets/macro-2.jpg"
-							width="620px"
-							height="800px"
-							style="vertical-align: baseline;"
+							width="600px"
+							height="600px"
 						/>
 					</pattern>
 					<pattern
 						id="pattern1r"
-						patternUnits="userSpaceOnUse"
+						patternUnits="objectBoundingBox"
 						x="365px"
-						width="562"
-						height="366"
-						viewBox="0 0 562 366"
+						width="100%"
+						height="100%"
 					>
 						<image
 							xlink:href="./assets/macro-3.jpg"
@@ -123,6 +121,28 @@
 			<div class="slider__pagination">
 				<a href="#slide-1" class="button">Slide 1</a>
 				<a href="#slide-2" class="button">Slide 2</a>
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal-container" id="modal">
+			<div class="modal">
+				<button id="modal-close-button" class="close-button">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						height="24"
+						viewBox="0 0 24 24"
+						width="24"
+					>
+						<path
+							d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+						/>
+						<path d="M0 0h24v24H0z" fill="none" />
+					</svg>
+				</button>
+				<div class="modal-content">
+					<img src="./assets/macro-3.jpg" alt="macro picture 1" />
+				</div>
 			</div>
 		</div>
 	</body>

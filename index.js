@@ -6,61 +6,39 @@ const slide3 = document.querySelector('#slide-3');
 const background = document.querySelector('#slide-background');
 const leftImage = document.querySelector('.slide__image-left');
 const rightImage = document.querySelector('.slide__image-right');
-// const bgDiv = document.querySelector('.slide__bg');
+
 slide1.addEventListener('click', () => {
   background.setAttribute('fill', 'url(#bg1)');
   leftImage.setAttribute('fill', 'url(#pattern1l)');
   rightImage.setAttribute('fill', 'url(#pattern1r)');
-  const tl1 = slideOne();
+  const tl1 = slidesTl();
   tl1.play();
 });
-
-const slideOne = () => {
-  let tl1 = gsap.timeline({ paused: true })
-    .to(leftImage, { y: -80, opacity: 0, duration: 1 })
-    .to(rightImage, { y: 80, opacity: 0, duration: 1 }, "<")
-    .to(leftImage, { y: -20, opacity: 1, duration: 0.5 })
-    .to(rightImage, { y: 20, opacity: 1, duration: 0.5 }, "<")
-    .fromTo(background, { opacity: 0 }, { opacity: 1, duration: 1 }, "<");
-  // .fromTo(background, { autoAlpha: 0 }, { autoAlpha: 1, fill: "url(#bg1)", duration: 0.2 })
-  // .fromTo(background, { opacity: 0 }, { opacity: 1, duration: 1 });
-  return tl1.timeScale(2);
-};
 
 slide2.addEventListener('click', () => {
   background.setAttribute('fill', 'url(#bg2)');
   leftImage.setAttribute('fill', 'url(#pattern2l)');
   rightImage.setAttribute('fill', 'url(#pattern2r)');
-  const tl2 = slideTwo();
+  const tl2 = slidesTl();
   tl2.play();
 });
-
-const slideTwo = () => {
-  let tl2 = gsap.timeline({ paused: true })
-    .to(leftImage, { y: -80, opacity: 0, duration: 1 })
-    .to(rightImage, { y: 80, opacity: 0, duration: 1 }, "<")
-    .to(leftImage, { y: -20, opacity: 1, duration: 0.5 })
-    .to(rightImage, { y: 20, opacity: 1, duration: 0.5 }, "<")
-    .fromTo(background, { opacity: 0 }, { opacity: 1, duration: 1 }, "<");
-  return tl2.timeScale(2);
-};
 
 slide3.addEventListener('click', () => {
   background.setAttribute('fill', 'url(#bg3)');
   leftImage.setAttribute('fill', 'url(#pattern3l)');
   rightImage.setAttribute('fill', 'url(#pattern3r)');
-  const tl3 = slideThree();
+  const tl3 = slidesTl();
   tl3.play();
 });
 
-const slideThree = () => {
-  let tl3 = gsap.timeline({ paused: true })
+const slidesTl = () => {
+  let tl = gsap.timeline({ paused: true })
     .to(leftImage, { y: -80, opacity: 0, duration: 1 })
     .to(rightImage, { y: 80, opacity: 0, duration: 1 }, "<")
     .to(leftImage, { y: -20, opacity: 1, duration: 0.5 })
     .to(rightImage, { y: 20, opacity: 1, duration: 0.5 }, "<")
     .fromTo(background, { opacity: 0 }, { opacity: 1, duration: 1 }, "<");
-  return tl3.timeScale(2);
+  return tl.timeScale(2);
 };
 
 navToggle.addEventListener('click', navigationToggle);
@@ -93,21 +71,20 @@ const slides = {
   pattern3r: "./assets/impala_3.jpg",
 };
 
+function openModal(slide) {
+  modalImage.src = slides[slide];
+  gsap.to(modal, { opacity: 1, duration: 1 });
+  modal.classList.add('show-modal');
+}
+
 leftImage.addEventListener('click', () => {
   let slide = leftImage.getAttribute('fill').substring(5, 14);
-  console.log(slides[slide]);
-  modalImage.src = slides[slide];
-  gsap.to(modal, { opacity: 1 });
-  modal.classList.add('show-modal');
+  openModal(slide);
 });
 
 rightImage.addEventListener('click', () => {
   let slide = rightImage.getAttribute('fill').substring(5, 14);
-  console.log(slide);
-  console.log(slides[slide]);
-  modalImage.src = slides[slide];
-  gsap.to(modal, { opacity: 1, duration: 1 });
-  modal.classList.add('show-modal');
+  openModal(slide);
 });
 
 closeModal.addEventListener('click', () => {

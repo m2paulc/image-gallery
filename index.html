@@ -23,8 +23,46 @@
 		<link rel="manifest" href="./assets/site.webmanifest" />
 		<link rel="stylesheet" href="./css/main.css" />
 		<title>Image Gallery</title>
+		<style>
+			.preloader {
+				position: fixed;
+				width: 100%;
+				height: 100vh;
+				background: #333;
+				background-size: cover;
+				background-repeat: no-repeat;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.preloader-done {
+				display: none;
+				opacity: 0;
+				pointer-events: none;
+			}
+
+			.loader-title {
+				text-align: center;
+				color: #eee;
+			}
+
+			.counter {
+				font-family: Montserrat, sans-serif;
+				font-size: 5rem;
+				font-weight: bold;
+				text-align: center;
+				color: #eee;
+			}
+		</style>
 	</head>
 	<body>
+		<div id="preloader" class="preloader">
+			<div class="loader"></div>
+			<h1 class="loader-title">Loading...</h1>
+			<p class="counter"></p>
+		</div>
 		<nav id="menu">
 			<div class="logo">
 				<img src="./assets/stork-user.png" alt="user" />
@@ -261,6 +299,44 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			document.onreadystatechange = function () {
+				if (document.readyState !== "complete") {
+					document.querySelector("body").style.visibility = "hidden";
+					document.querySelector("#preloader").style.visibility = "visible";
+					init();
+				} else {
+					document.querySelector("#preloader").style.display = "none";
+					document.querySelector("body").style.visibility = "visible";
+				}
+			};
+			function init() {
+				const preloader = document.querySelector(".preloader");
+				const counter = document.querySelector(".counter");
+				let count = 0;
+				let counterFunction = setInterval(() => {
+					if (count <= 100) {
+						counter.innerText = `${count}%`;
+						count++;
+					} else {
+						clearInterval(counterFunction);
+						fadeOut(preloader);
+					}
+				}, 100);
+			}
+
+			function fadeOut(element) {
+				element.style.opacity = 1;
+
+				(function fade() {
+					if ((element.style.opacity -= 0.1) === 0) {
+						element.style.display = "none";
+					} else {
+						requestAnimationFrame(fade);
+					}
+				})();
+			}
+		</script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
 		<script src="./index.js"></script>
 	</body>

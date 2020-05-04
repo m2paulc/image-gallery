@@ -7,7 +7,7 @@
 		<title>Image Gallery</title>
 	</head>
 	<body>
-		<nav>
+		<nav id="menu">
 			<div class="logo">
 				<img src="./assets/stork-user.png" alt="user" />
 			</div>
@@ -40,6 +40,7 @@
 					height="0"
 				>
 					<defs>
+						<!-- Slide 1 -->
 						<pattern
 							id="bg1"
 							patternUnits="userSpaceOnUse"
@@ -80,22 +81,114 @@
 								height="600px"
 							/>
 						</pattern>
+
+						<!-- Slide 2 -->
+						<pattern
+							id="bg2"
+							patternUnits="userSpaceOnUse"
+							width="1920"
+							height="1080"
+							viewBox="0 0 1920 1080"
+						>
+							<image
+								xlink:href="./assets/macro-4.jpg"
+								width="100%"
+								height="100%"
+							/>
+						</pattern>
+						<pattern
+							id="pattern2l"
+							patternUnits="objectBoundingBox"
+							x="0px"
+							y="0px"
+							width="100%"
+							height="100%"
+						>
+							<image
+								xlink:href="./assets/macro-4.jpg"
+								width="600px"
+								height="600px"
+							/>
+						</pattern>
+						<pattern
+							id="pattern2r"
+							patternUnits="objectBoundingBox"
+							x="365px"
+							width="100%"
+							height="100%"
+						>
+							<image
+								xlink:href="./assets/macro-5.jpg"
+								width="600px"
+								height="600px"
+							/>
+						</pattern>
+
+						<!-- Slide 3 -->
+						<!-- Slide 2 -->
+						<pattern
+							id="bg3"
+							patternUnits="userSpaceOnUse"
+							width="1920"
+							height="1080"
+							viewBox="0 0 1920 1080"
+						>
+							<image
+								xlink:href="./assets/impala_1.jpg"
+								width="100%"
+								height="100%"
+							/>
+						</pattern>
+						<pattern
+							id="pattern3l"
+							patternUnits="objectBoundingBox"
+							x="0px"
+							y="0px"
+							width="100%"
+							height="100%"
+						>
+							<image
+								xlink:href="./assets/impala_2.jpg"
+								width="600px"
+								height="600px"
+							/>
+						</pattern>
+						<pattern
+							id="pattern3r"
+							patternUnits="objectBoundingBox"
+							x="365px"
+							width="100%"
+							height="100%"
+						>
+							<image
+								xlink:href="./assets/impala_3.jpg"
+								width="600px"
+								height="600px"
+							/>
+						</pattern>
 					</defs>
 				</svg>
 			</div>
 
 			<div class="slide" id="slide">
-				<div class="slide__bg">
-					<svg
-						viewBox="0 0 1920 1080"
-						xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink"
-						x="0px"
-						y="0px"
-					>
-						<rect x="0" y="0" width="1920" height="1080" fill="url(#bg1)" />
-					</svg>
-				</div>
+				<svg
+					class="slide__bg"
+					viewBox="0 0 1920 1080"
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					x="0px"
+					y="0px"
+				>
+					<rect
+						id="slide-background"
+						x="0"
+						y="0"
+						width="1920"
+						height="1080"
+						fill="url(#bg1)"
+					/>
+				</svg>
+
 				<div class="slide__image">
 					<svg
 						viewBox="0 0 900 365"
@@ -121,6 +214,7 @@
 				<div class="slider__pagination">
 					<a href="#slide-1" class="button" id="slide-1">Slide 1</a>
 					<a href="#slide-2" class="button" id="slide-2">Slide 2</a>
+					<a href="#slide-3" class="button" id="slide-3">Slide 3</a>
 				</div>
 			</div>
 		</main>
@@ -141,9 +235,15 @@
 					</svg>
 				</button>
 				<div class="modal-content">
-					<img src="./assets/macro-3.jpg" alt="macro picture 1" />
+					<img
+						id="modal-image"
+						src="./assets/macro-3.jpg"
+						alt="macro picture 1"
+					/>
 				</div>
 			</div>
 		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+		<script src="./index.js"></script>
 	</body>
 </html>

@@ -1,13 +1,13 @@
 {
   "name": "image-gallery2",
   "version": "1.0.0",
-  "description": "",
+  "description": "An image gallery which caches all images in SVG.",
   "main": "index.js",
   "scripts": {
     "sass": "node-sass -w scss/ -o css/ --recursive"
   },
   "keywords": [],
-  "author": "",
+  "author": "Paul Caoile",
   "license": "ISC",
   "dependencies": {
     "node-sass": "^4.14.0"

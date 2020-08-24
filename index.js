@@ -33,21 +33,21 @@ slide3.addEventListener('click', () => {
 
 const slidesTl = () => {
   let tl = gsap.timeline({ paused: true })
-    .to(leftImage, { y: -80, opacity: 0, duration: 0.5 })
-    .to(rightImage, { y: 80, opacity: 0, duration: 0.5 }, "<")
-    .to(leftImage, { y: -20, opacity: 1, duration: 0.3 })
-    .to(rightImage, { y: 20, opacity: 1, duration: 0.3 }, "<")
-    .fromTo(background, { opacity: 0 }, { opacity: 1, duration: 0.5 }, "<");
-  return tl.timeScale(0.5);
+    .to(leftImage, { y: -80, autoAlpha: 0, duration: 0.1 })
+    .to(rightImage, { y: 80, autoAlpha: 0, duration: 0.1 }, "<")
+    .to(leftImage, { y: -20, autoAlpha: 1, duration: 0.2 })
+    .to(rightImage, { y: 20, autoAlpha: 1, duration: 0.2 }, "<")
+    .fromTo(background, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1 }, "<");
+  return tl.timeScale(1);
 };
 
 navToggle.addEventListener('click', navigationToggle);
 
 const toggleTl = () => {
   let tl = gsap.timeline({ paused: true });
-  tl.to('#menu-toggle', { duration: 0.2, x: 200 })
-    .fromTo('#menu', { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.2 }, "<");
-  return tl.timeScale(0.2);
+  tl.to('#menu-toggle', { duration: 0.5, x: 200 })
+    .fromTo('#menu', { x: -200, autoAlpha: 0 }, { x: 0, autoAlpha: 1 }, "<");
+  return tl.timeScale(1);
 };
 
 const toggleTlControls = toggleTl();
@@ -73,7 +73,7 @@ const slides = {
 
 function openModal(slide) {
   modalImage.src = slides[slide];
-  gsap.to(modal, { opacity: 1, duration: 0.5 });
+  gsap.to(modal, { autoAlpha: 1, duration: 0.5 });
   modal.classList.add('show-modal');
 }
 
@@ -89,7 +89,7 @@ rightImage.addEventListener('click', () => {
 
 closeModal.addEventListener('click', () => {
   if (modal.classList.contains('show-modal')) {
-    gsap.to(modal, { opacity: 0, duration: 0.3 });
+    gsap.to(modal, { autoAlpha: 0, duration: 0.3 });
     modal.classList.remove('show-modal');
   };
 });

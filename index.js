@@ -38,7 +38,7 @@ const slidesTl = () => {
     .to(leftImage, { y: -20, opacity: 1, duration: 0.5 })
     .to(rightImage, { y: 20, opacity: 1, duration: 0.5 }, "<")
     .fromTo(background, { opacity: 0 }, { opacity: 1, duration: 1 }, "<");
-  return tl.timeScale(2);
+  return tl.timeScale(0.5);
 };
 
 navToggle.addEventListener('click', navigationToggle);
@@ -47,7 +47,7 @@ const toggleTl = () => {
   let tl = gsap.timeline({ paused: true });
   tl.to('#menu-toggle', { duration: 0.2, x: 200 })
     .fromTo('#menu', { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.2 }, "<");
-  return tl.timeScale(0.3);
+  return tl.timeScale(0.5);
 };
 
 const toggleTlControls = toggleTl();
@@ -73,7 +73,7 @@ const slides = {
 
 function openModal(slide) {
   modalImage.src = slides[slide];
-  gsap.to(modal, { opacity: 1, duration: 1 });
+  gsap.to(modal, { opacity: 1, duration: 0.5 });
   modal.classList.add('show-modal');
 }
 
